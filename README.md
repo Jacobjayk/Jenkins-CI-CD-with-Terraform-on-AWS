@@ -65,6 +65,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 Browse to http://YOUR_INSTANCE_IP:8080, paste the password,
 click Install suggested plugins, then Create Admin User.
 
+![Jenkins](screenshots/jenkins_dashboard.png)
+
 ---
 
 ## 🚀 Step 2: Install Terraform & AWS CLI
@@ -101,6 +103,8 @@ sudo apt install -y terraform
 terraform --version  # expect v1.7.x or later
 ```
 
+![terraform Version](screenshots/terraform_version.png)
+
 ### B. Install AWS CLI v2
 Download & unzip:
 
@@ -116,6 +120,8 @@ Install & verify:
 sudo ./aws/install
 aws --version  # expect aws-cli/2.x.x
 ```
+
+![AWS Version](screenshots/aws_version.png)
 
 ### C. Configure AWS Credentials
 In AWS Console: IAM → Users → Add User
@@ -142,13 +148,15 @@ aws configure
 ### A. Install Required Plugins
 In Jenkins UI → Manage Jenkins → Manage Plugins → Available, install:
 
-Pipeline
+Pipeline(REST API (v2.38), Stage View (v2.38), Pipeline Utility Steps (v2.19.0))
 
 Terraform
 
 AWS Credentials
 
 Then Restart Jenkins.
+
+![Download plugins](screenshots/download_process.png)
 
 ### B. Add AWS Credentials to Jenkins
 Manage Jenkins → Credentials → System → Global credentials
@@ -161,7 +169,7 @@ ID: AWS_CREDS
 
 Paste your Access Key & Secret Key
 
-OK
+Click OK
 
 ### C. Create & Push Your Terraform Project
 On your local machine, in a folder named terraform-aws-demo:
@@ -233,7 +241,11 @@ Save, then Build Now.
 ## 🚀 Step 4: Verify Deployment
 Check Jenkins Stage View: all stages should pass.
 
+![Jenkins Stage View](screenshots/final_stage_view.png)
+
 In AWS EC2 Console (us-west-2), you’ll see an instance named Jenkins-Deployed-EC2 running.
+
+![Create Instance](screenshots/instance_created.png)
 
 ---
 
@@ -247,6 +259,8 @@ stage('Terraform Destroy') {
 ```
 
 Re-run the pipeline to delete the EC2 instance.
+
+![Delete Instance](screenshots/instance_destroyed.png)
 
 ---
 
