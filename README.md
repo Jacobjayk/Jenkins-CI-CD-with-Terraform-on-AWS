@@ -273,11 +273,8 @@ Build stays “Scheduled”	Check executor count or node labels under Manage Jen
 
 ---
 
-## 🎉 You Did It!
-Now you have:
-✅ Automated AWS deployments (No manual clicking!)
-✅ Jenkins CI/CD pipeline (Runs on code changes)
-✅ Terraform infrastructure-as-code (Reproducible environments)
+## 🎉 Congratulations! 
+You now have a fully automated Jenkins CI/CD pipeline deploying AWS infrastructure with Terraform.
 
 ---
 
