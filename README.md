@@ -1,4 +1,4 @@
-# Project 3: Jenkins CI/CD with Terraform on AWS  
+# Jenkins CI/CD with Terraform on AWS  
 _A Complete Beginner’s Guide (Zero AWS/DevOps Knowledge Required)_
 
 ---
